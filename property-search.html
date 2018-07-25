@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>property-search</title>
+</head>
+<body>
+    <form method="get" action="https://request-inspector.glitch.me">
+        <h1>Property Search</h1>
+        <p>Property type:
+        <select name="Property Type" id="property">
+            <option value="prop1">House</option>
+            <option value="prop2">Apartment</option>
+            <option value="prop3">Condominium</option>
+            <option value="prop4">Manufactured</option>
+        </select></p>
+        <p>Square Footage</p>
+        <label for="min">Minimum:</label>
+        <input type="number" name="minimum" id="min">
+        <br>
+        <label for="max">Maximum</label>
+        <input type="number" name="maximum" id="max">
+        <br>
+        <p>Price Range ($0-$1000 monthly)</p>
+        <input type="range" list="tickmarks">
+            <datalist id="tickmarks">
+                <option value="0"></option label=$0/month>
+                <option value="10"></option>
+                <option value="20"></option>
+                <option value="30"></option>
+                <option value="40"></option>
+                <option value="50"></option label=$500/month>
+                <option value="60"></option>
+                <option value="70"></option>
+                <option value="80"></option>
+                <option value="90"></option>
+                <option value="100"></option label=$1000/month>
+            </datalist>
+        <br>
+        <label for="zip">Zip Code</label>
+        <input type="number" name="zip" id="zip" required>
+        <br>
+        <p>Number of Bedrooms:</p>
+        <input type="checkbox" name="bed1" id="bed1" checked="on">
+        <label for="bed1">1</label>
+        <br>
+        <input type="checkbox" name="bed2" id="bed2">
+        <label for="bed2">2</label>
+        <br>
+        <input type="checkbox" name="bed3" id="bed3">
+        <label for="bed3">3</label>
+        <br>
+        <input type="checkbox" name="bed4" id="bed4">
+        <label for="bed4">4+</label>
+        <br>
+        <p>Number of Bathrooms:</p>
+        <input type="checkbox" name="bath1" id="bath1" checked="on">
+        <label for="bath1">1</label>
+        <br>
+        <input type="checkbox" name="bath2" id="bath2">
+        <label for="bath2">2</label>
+        <br>
+        <input type="checkbox" name="bath3" id="bath3">
+        <label for="bath3">3+</label>
+        <br><br>
+        <input type="submit" value="Search now!">
+    </form>
+</body>
+</html>
