@@ -1,0 +1,67 @@
+h1 {
+    text-align: center;
+}
+h1, h2 {
+    color: purple;
+    text-decoration: underline;
+}
+body {
+    background-color: lightgrey;
+}
+ul {
+    list-style: square;
+}
+body {
+    font-family: "Trebuchet MS";
+}
+#table1 {
+    margin: 1em;
+    border-spacing: 0em;
+    padding: 1.1em;
+}
+#tdp {
+    border: 1px solid purple;
+    padding: 1.1em;
+}
+a:visited {
+    color: black;
+}
+a:hover {
+    color: purple;
+}
+#office1 {
+    opacity: 1;
+    transition: opacity 2s ease-in-out;
+    -moz-transition: opacity 2s ease-in-out;
+    -webkit-transition: opacity 2s ease-in-out;
+}
+#office1:hover {
+    opacity: 0
+}
+#office2 {
+    opacity: 1;
+    transition: opacity 2s ease-in-out;
+    -moz-transition: opacity 2s ease-in-out;
+    -webkit-transition: opacity 2s ease-in-out;
+}
+#office2:hover {
+    opacity: 0
+}
+#office3 {
+    opacity: 1;
+    transition: opacity 2s ease-in-out;
+    -moz-transition: opacity 2s ease-in-out;
+    -webkit-transition: opacity 2s ease-in-out;
+}
+#office3:hover {
+    opacity: 0
+}
+#office4 {
+    opacity: 1;
+    transition: opacity 2s ease-in-out;
+    -moz-transition: opacity 2s ease-in-out;
+    -webkit-transition: opacity 2s ease-in-out;
+}
+#office4:hover {
+    opacity: 0
+}
