@@ -11,6 +11,7 @@ body, html {
     margin: 5px;
     padding: 5px;
     border: 1px lightgray;
+    border-radius: 5px
 }
 .message-info {
     --bg-info: lightblue;
@@ -22,6 +23,7 @@ body, html {
     margin: 5px;
     padding: 5px;
     border: 1px lightgray;
+    border-radius: 5px
 }
 .message-success {
     --bg-success: lightblue;
@@ -33,6 +35,7 @@ body, html {
     margin: 5px;
     padding: 5px;
     border: 1px lightgray;
+    border-radius: 5px
 }
 .message-warning {
     --bg-warning: lightgoldenrodyellow;
@@ -44,6 +47,7 @@ body, html {
     margin: 5px;
     padding: 5px;
     border: 1px lightgray;
+    border-radius: 5px
 }
 .message-error {
     --bg-error: lightpink;
