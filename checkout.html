@@ -2,53 +2,110 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     <title>checkout</title>
 </head>
 <body>
-    <h1>Checkout</h1>
-    <h4>*ALL FIELDS REQUIRED*</h4>
-    <form method="post" action="https://request-inspector.glitch.me">
-    <h3>Credit Card Information</h3>
-        <p>
-            <label for="card">Credit Card Number:</label>
-            <input type="text" name="card" id="card" required>
-        </p>
-        <p>
-            <label for="expire">Expiration Date</label>
-            <input type="month" name="expire" id="expire" required>
-        </p>
-        <p>
-            <label for="cvc">Security Code:</label>
-            <input type="password" name="cvc" id="cvc" required>
-        </p>
-    <h3>Billing Address</h3>
-        <p>
-            <label for="address">Street Address:</label>
-            <input type="text" name="address" id="address" required>
-            <br>
-            <label for="city">City</label>
-            <input type="text" name="city" id="city" required>
-            <br>
-            <label for="state">State:</label>
-            <select name="state" id="state">
-                <option value="AZ">Arizona</option>
-                <option value="CA">California</option>
-                <option value="CO">Colorado</option>
-                <option value="KS">Kansas</option>
-                <option value="LA">Lousiana</option>
-                <option value="NM">New Mexico</option>
-                <option value="NV">Nevada</option>
-                <option value="TX">Texas</option>
-            </select>
-            <br>
-            <label for="zip">Zip Code:</label>
-            <input type="number" name="zip" id="zip" required>
-            <br>
-            <label for="checkbox">Keep this card on file for future purchases?</label>
-            <input type="checkbox" name="checkbox" id="checkbox" required checked="on">
-            <br>
-            <input type="submit" value="Buy Now!">
-        </p>
-    </form>
+<div class="container-fluid">
+    <div class="card" id="checkout">
+        <div class="card-body">
+            <div class="card-body card-header">
+                <ul class="list-group">
+                    <li class="list-group-item active">Checkout</li>
+                    <li class="card-header">Payment Information</li>
+                        <li class="list-group-item">ALL FIELDS REQUIRED!
+                        <small id="checkoutHelp" class="form-text text-muted">*Unless otherwise indicated*</small></li>
+                    <li class="list-group-item">
+                        <label for="cardnumber">Credit Card Number: </label>
+                        <input type="text" name="card" id="cardnumber" required>
+                    </li>
+                    <li class="list-group-item">
+                        <label for="expire">Expiration Date: </label>
+                        <input type="month" name="expire" id="expire" required>
+                    </li>
+                    <li class="list-group-item">
+                        <label for="cvc">Security Code: </label>
+                        <input type="text" name="cvc" id="cvc" required>
+                    </li>
+                    <li class="list-group-item"><label for="checkbox">Keep this card on file for future purchases?</label>
+                        <input type="checkbox" name="checkbox" id="checkbox" required checked="on">
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body card-header">
+                    <ul class="list-group">
+                        <li class="card-header">Delivery Address</li>
+                        <li class="list-group-item">
+                            <label for="address">Street Address:</label>
+                            <input type="text" name="address" id="address" required>
+                        </li>
+                        <li class="list-group-item">
+                            <label for="city">City</label>
+                            <input type="text" name="city" id="city" required>
+                        </li>
+                        <li class="list-group-item">
+                            <label for="state">State:</label>
+                            <select name="state" id="state">
+                                <option value="AZ">Arizona</option>
+                                <option value="CA">California</option>
+                                <option value="CO">Colorado</option>
+                                <option value="KS">Kansas</option>
+                                <option value="LA">Lousiana</option>
+                                <option value="NM">New Mexico</option>
+                                <option value="NV">Nevada</option>
+                                <option value="TX" selected>Texas</option>
+                            </select>
+                        </li>
+                        <li class="list-group-item">
+                            <label for="zip">Zip Code:</label>
+                            <input type="number" name="zip" id="zip" required>
+                        </li>
+                        <li class="list-group-item"><label for="billaddress">Check here if billing address same as delivery: </label>
+                            <input type="checkbox" name="checkbox" id="billaddress">
+                        </li>
+                    </ul>
+            </div>
+                <div class="card-body card-header">
+                    <ul class="list-group">
+                        <li class="card-header">Billing Address</li>
+                        <li class="list-group-item">
+                            <small id="checkoutHelp" class="form-text text-muted">*Not required if same as delivery*</small></li>
+                        <li class="list-group-item">
+                            <label for="address">Street Address:</label>
+                            <input type="text" name="address" id="address">
+                        </li>
+                        <li class="list-group-item">
+                            <label for="city">City</label>
+                            <input type="text" name="city" id="city">
+                        </li>
+                        <li class="list-group-item">
+                            <label for="state">State:</label>
+                            <select name="state" id="state">
+                                <option value="AZ">Arizona</option>
+                                <option value="CA">California</option>
+                                <option value="CO">Colorado</option>
+                                <option value="KS">Kansas</option>
+                                <option value="LA">Lousiana</option>
+                                <option value="NM">New Mexico</option>
+                                <option value="NV">Nevada</option>
+                                <option value="TX">Texas</option>
+                            </select>
+                        </li>
+                        <li class="list-group-item">
+                            <label for="zip">Zip Code:</label>
+                            <input type="number" name="zip" id="zip">
+                        </li>
+                        <li class="list-group-item"><label for="billaddress">Check here if billing address same as delivery: </label>
+                            <input type="checkbox" name="checkbox" id="billaddress">
+                        </li>
+                </ul>
+            </div>
+        </div>
+        <p class="text-right card-footer"><a href="order-pizza.html" class="btn btn-primary">Order Now!</a></p>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
