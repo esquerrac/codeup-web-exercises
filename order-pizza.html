@@ -19,8 +19,8 @@
             <button type="button" class="btn btn-primary">Order Online</button>
             <button type="button" class="btn btn-primary">Menu</button>
         </div>
-        <span><input class="form-control mr-sm-2" type="search" placeholder="Zip Code" aria-label="Zip Code">
-                <a href="https://www.google.com/maps/search/?api=1&query=pizza+&parameters"
+        <span><input class="form-control mr-sm-0" type="search" placeholder="Zip Code" aria-label="Zip Code"></span>
+                <span><a href="https://www.google.com/maps/search/?api=1&query=pizza+&parameters"
                    class="btn btn-outline-secondary mr-sm-2" type="search">Search Stores Near You!</a></span>
     </form>
     <button class="btn btn-outline-secondary login" data-toggle="modal" data-target="#loginmodal">
@@ -106,9 +106,9 @@
                 <li class="card-header">Hand Tossed</li>
                 <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
                 <li class="list-group-item">
-                    <input type="radio" name="size"> Small (10")</input></li>
+                    <input type="radio" name="size" id="handsmall"> <label for="handsmall">Small (10")</label></input></li>
                 <li class="list-group-item">
-                    <input type="radio" name="size"> Medium (12")</input></li>
+                    <input type="radio" name="size" id="handmedium"><label for="handmedium"> Medium (12")</label></input></li>
             </ul>
         </div>
         <div class="card-body card-header">
@@ -116,9 +116,9 @@
                 <li class="card-header">Crispy Thin</li>
                 <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
                 <li class="list-group-item">
-                    <input type="radio" name="size"> Medium (12")</input></li>
+                    <input type="radio" name="size" id="thinmedium"><label for="thinmedium"> Medium (12")</label></input></li>
                 <li class="list-group-item">
-                    <input type="radio" name="size"> Large (14")</input></li>
+                    <input type="radio" name="size" id="thinlarge"><label for="thinlarge"> Large (14")</label></input></li>
             </ul>
         </div>
         <p class="text-right card-footer"><a href="#cheesesauce" class="btn btn-primary">Next Step ></a></p>
@@ -134,7 +134,7 @@
                     <form class="form-inline">
                         <select class="custom-select my-1 mr-sm-2" id="cheeseamount">
                             <option value="1">Light</option>
-                            <option selected value="2">Normal</option>
+                            <option value="2" selected>Normal</option>
                             <option value="3">Extra</option>
                             <option value="3">Double</option>
                         </select>
@@ -173,22 +173,22 @@
             <ul class="list-group">
                 <li class="card-header">Choose Meats</li>
                 <li class="list-group-item">
-                    <input type="checkbox" name="meats"> Beef</li></input>
+                    <input type="checkbox" name="meats" id="beef"><label for="beef"> Beef</label></li></input>
                 <li class="list-group-item">
-                    <input type="checkbox" name="meats"> Ham</input></li>
+                    <input type="checkbox" name="meats" id="ham"><label for="ham"> Ham</label></input></li>
                 <li class="list-group-item">
-                    <input type="checkbox" name="meats"> Philly Steak</input></li>
+                    <input type="checkbox" name="meats" id="phillysteak"><label for="phillysteak"> Philly Steak</label></input></li>
                 <li class="list-group-item">
-                    <input type="checkbox" name="meats"> Bacon</input></li>
+                    <input type="checkbox" name="meats" id="bacon"><label for="bacon"> Bacon</label></input></li>
                 <li class="card-header">Choose Non-Meats</li>
                 <li class="list-group-item">
-                    <input type="checkbox" name="nonmeats"> Green Peppers</input></li>
+                    <input type="checkbox" name="nonmeats" id="peppers"><label for="peppers"> Green Peppers</label></input></li>
                 <li class="list-group-item">
-                    <input type="checkbox" name="nonmeats"> Mushrooms</input></li>
+                    <input type="checkbox" name="nonmeats" id="mushrooms"><label for="mushrooms"> Mushrooms</label></input></li>
                 <li class="list-group-item">
-                    <input type="checkbox" name="nonmeats"> Onions</input></li>
+                    <input type="checkbox" name="nonmeats" id="onions"><label for="onions"> Onions</label></input></li>
                 <li class="list-group-item">
-                    <input type="checkbox" name="nonmeats"> Jalape&ntilde;o Peppers</input></li>
+                    <input type="checkbox" name="nonmeats" id="jalapeno"><label for="jalapeno"> Jalape&ntilde;o Peppers</label></input></li>
             </ul>
         </div>
     </div>
