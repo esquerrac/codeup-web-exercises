@@ -46,7 +46,7 @@
         // TODO: Set the text color of subHeader to blue
         var subHeaderButton = function (click) {
             subHeader.style.color = "#0000FF";
-            document.getElementsByTagName("li")[0].style.color = "#0000FF";
+            document.querySelector("li[data-dbid='1']").style.color = "#0000FF";
         };
         document.getElementById("btn2").addEventListener("click", subHeaderButton, false);
 
@@ -61,11 +61,10 @@
 
         // TODO: Set text color on every other list item to grey
         // TODO: Set text color of li with dbid = 1 to blue
-    // var evenItems = document.getElementsByClassName("even");
-    //     evenItems.style.color ="#888888";
         var listButton = function (click) {
-            document.getElementsByTagName("li")[1].style.color = "#888888";
-            document.getElementsByTagName("li")[3].style.color = "#888888";
+            for (var i = 0; i < listItems.length; i += 2) {
+                listItems[i].style.color="#999999"
+            }
         }
         document.getElementById("btn3").addEventListener("click", listButton, false);
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
