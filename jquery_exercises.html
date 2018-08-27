@@ -6,9 +6,9 @@
 </head>
 <body>
 <div>
-    <h1 class="codeup">JQuery Examples</h1>
-    <p class="codeup">This is a P tag that can be accessed by JQuery.</p>
-    <ul class="codeup">
+    <h1>JQuery Examples</h1>
+    <p>This is a P tag that can be accessed by JQuery.</p>
+    <ul>
         <li>This list item can be too!</li>
         <li>But not this one</li>
         <li>I'm kidding, they're all accessible</li>
@@ -20,8 +20,13 @@
 <script type="text/javascript" src="js/jquery-2.2.4.js"></script>
 <script>
     "use strict";
-    $(".codeup").css("border", "1px solid red");
-
+    $("li").css("font-size", "20px");
+    $("h1, p, li").css("background-color", "yellow");
+    // $("p").css("background-color", "pink");
+    // $("li").css("background-color", "orange");
+    $(document).ready(function (){
+        alert($("h1").text());
+    })
 </script>
 </body>
 </html>
