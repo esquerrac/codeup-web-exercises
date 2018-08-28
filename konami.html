@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+<h1 class="header" id="header1">Konami Code</h1>
+<h1 class="header" id="header2">Wow!</h1>
+<h1 class="header" id="header3">You're Awesome!</h1>
+<h1 class="header" id="header4">Everybody Dance!</h1>
+<h1 class="header" id="header5">Yippee!</h1>
+
+<img class="image" id="image1" src="images/nyancat.png">
+<img class="image" id="image3" src="images/unicorn.jpg">
+<img class="image" id="image4" src="images/float%20cat.jpeg">
+<img class="image" id="image5" src="images/nyangif.gif">
+<div id="video" style="position:relative;height:0;padding-bottom:56.28%">
+    <iframe src="https://www.youtube.com/embed/WvEZn79Twrs?ecver=2" style="position:absolute;width:2%;height:2%;left:0"
+            width="640" height="360" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    $(".image").css("width", "500px");
+    $("#image1").css("position", "absolute");
+    $("#image3").css("position", "absolute");
+    $("#image4").css("position", "absolute");
+    $("#image5").css("position", "absolute");
+    $(".image").css("display", "none");
+    $(".header").css("display", "none");
+    $("#header1").css("display", "inline");
+    $("#video").css("opacity", "10%");
+    "use strict";
+    function colorFlash() {
+        var flashCount = 0;
+        var interval = 50;
+        setInterval(function () {
+            if (flashCount === 0) {
+                $("body").css("background-color", "red");
+                flashCount++
+            } else if (flashCount === 1) {
+                $("body").css("background-color", "yellow");
+                flashCount++
+            } else if (flashCount === 2) {
+                $("body").css("background-color", "green");
+                flashCount++
+            } else if (flashCount === 3) {
+                $("body").css("background-color", "blue");
+                flashCount++
+            } else if (flashCount === 4) {
+                $("body").css("background-color", "pink");
+                flashCount++
+            } else if (flashCount === 5) {
+                $("body").css("background-color", "orange");
+                flashCount++
+            } else if (flashCount === 6) {
+                $("body").css("background-color", "purple");
+                flashCount=0;
+            }
+        }, interval);
+    }
+
+    function imageParty() {
+        var danceCount = 0;
+        var interval = 500;
+        setInterval(function () {
+            if (danceCount === 0) {
+                $(".image").css("display", "none");
+                $(".header").css("display", "none");
+                $("#image1").css("display", "inline");
+                $("#header2").css("display", "inline");
+                danceCount++;
+            } else if (danceCount === 1) {
+                $(".image").css("display", "none");
+                $(".header").css("display", "none");
+                $("#image3").css("display", "inline");
+                $("#header3").css("display", "inline");
+                danceCount++;
+            } else if (danceCount === 2) {
+                $(".image").css("display", "none");
+                $(".header").css("display", "none");
+                $("#image4").css("display", "inline");
+                $("#header4").css("display", "inline");
+                danceCount++;
+            } else if (danceCount === 3) {
+                $(".image").css("display", "none");
+                $(".header").css("display", "none");
+                $("#image5").css("display", "inline");
+                $("#header5").css("display", "inline");
+                danceCount = 0;
+            }
+        }, interval);
+    }
+    function imageDance() {
+        var count = 0;
+        var interval =500;
+        setInterval(function (){
+        if (count === 0) {
+            $("#image1").animate({left: "600px"});
+            $("#image3").animate({bottom: "300px"});
+            $("#image4").animate({right: "500px"});
+            $("#image5").animate({top: "800px"});
+            count++;
+        }else if (count===1) {
+            $("#image1").animate({top: "600px"});
+            $("#image3").animate({left: "300px"});
+            $("#image4").animate({top: "500px"});
+            $("#image5").animate({left: "800px"});
+            count++;
+        }else if (count===2) {
+            $("#image1").animate({right: "600px"});
+            $("#image3").animate({top: "300px"});
+            $("#image4").animate({left: "500px"});
+            $("#image5").animate({bottom: "800px"});
+            count++;
+        }else if (count===3){
+            $("#image1").animate({bottom: "600px"});
+            $("#image3").animate({right: "300px"});
+            $("#image4").animate({bottom: "500px"});
+            $("#image5").animate({right: "800px"});
+            count++;
+            }else if (count === 4) {
+            $("#image1").animate({left: "600px"});
+            $("#image3").animate({bottom: "300px"});
+            $("#image4").animate({right: "500px"});
+            $("#image5").animate({top: "200px"});
+            count++;
+        }else if (count===5) {
+            $("#image1").animate({top: "600px"});
+            $("#image3").animate({left: "300px"});
+            $("#image4").animate({top: "500px"});
+            $("#image5").animate({left: "800px"});
+            count++;
+        }else if (count===6) {
+            $("#image1").animate({right: "600px"});
+            $("#image3").animate({top: "300px"});
+            $("#image4").animate({left: "500px"});
+            $("#image5").animate({bottom: "800px"});
+            count++;
+        }else if (count===7){
+            $("#image1").animate({bottom: "600px"});
+            $("#image3").animate({right: "300px"});
+            $("#image4").animate({bottom: "500px"});
+            $("#image5").animate({right: "800px"});
+            count=0;
+        }
+        }, interval);
+    }
+    // var tag = document.createElement('script');
+    // tag.src = "https://www.youtube.com/iframe_api";
+    // var firstScriptTag = document.getElementsByTagName('script')[0];
+    // firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    //
+    // var player;
+    // function onYouTubeIframeAPIReady(){
+    //     player = new YT.Player("player", {
+    //         height: "100",
+    //         width: "200",
+    //         videoID: "WvEZn79Twrs",
+    //         events: {
+    //             "onReady": onPlayerReady,
+    //         }
+    //     });
+    // }
+    // function onPlayerReady(event){
+    //     event.target.playVideo();
+    // }
+
+var inputArray = [];
+    $(document).keyup(function(event){
+        inputArray.push(event.keyCode);
+        console.log(inputArray.toString());
+        if (inputArray.toString().includes("38,38,40,40,37,39,37,39,66,65,13")) {
+            colorFlash();
+            imageParty();
+            imageDance();
+        }
+    });
+
+</script>
+</body>
+</html>
