@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>National Parks</title>
-
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <style>
         body {
             background-color: lightblue;
+        }
+
+        #firstList {
             text-align: center;
         }
 
-        h1 {
-            color: darkgreen;
-        }
-
-        dl {
+        .list {
             color: darkgreen;
         }
 
@@ -27,109 +26,188 @@
             width: 600px;
         }
 
+        ul {
+            list-style: none;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .blue {
+            color: blue;
+        }
+
+        .photo {
+            width: 300px;
+            height: 400px;
+            border: 5px solid black;
+        }
+
+        #rightImage {
+            background-image: url("images/cupcakes.jpg");
+            display: inline-block;
+        }
+
+        #centerImage {
+            background-image: url("images/gundam.jpg");
+            display: inline-block;
+        }
+
+        #leftImage {
+            background-image: url("images/cheezits.jpg");
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
-<h1>National Parks Frequently Asked Questions</h1>
-<dl>
-    <dt class="first">Are National Parks cool?</dt>
-    <br>
-    <dd class="firstA">National Parks are REALLY cool.</dd>
-    <img class="image firstA" src="images/coolTree.jpg"><br>
-    <dt class="second">How Many National Parks are there?</dt>
-    <br>
-    <dd class="secondA">There are 417 National Parks in the United States! That's more than 1 park for every million
-        people! Wow!
-    </dd>
-    <img class="image secondA" src="images/manyParks.jpg"><br>
-    <dt class="third">Are there any states without a National Park?</dt>
-    <br>
-    <dd class="thirdA">There are 23 states without a National Park. That means those other 27 states are basically just
-        all park.
-    </dd>
-    <img class="image thirdA" src="images/noParks.jpg"><br>
-    <dt class="fourth">How much does it cost to go?</dt>
-    <br>
-    <dd class="fourthA">That varies from park to park. If you sneak in through the woods it's always free, though.</dd>
-    <img class="image fourthA" src="images/dollars.jpg"><br>
-    <dt class="fifth">Which was the first National Park?</dt>
-    <br>
-    <dd class="fifthA">Yellowstone National Park, which, I've been told, is nowhere near Oz, somehow.</dd>
-    <img class="image fifthA" src="images/yellowBrick.jpg"><br>
-    <dt class="sixth">Which is the most popular National Park?</dt>
-    <br>
-    <dd class="sixthA">Great Smoky Mountains park routinely draws the most visitors. That's actually pretty impressive
-        for a park I've never heard of.
-    </dd>
-    <img class="image sixthA" src="images/gsmPark.jpg"><br>
-    <dt class="seventh">Are there any National Parks in an ocean?</dt>
-    <br>
-    <dd class="seventhA">88 National Parks include coastal and oceanic regions in their protected domain.</dd>
-    <img class="image seventhA" src="images/oceanPark.jpg"><br>
-    <dt class="eighth">Which National Park is the largest?</dt>
-    <br>
-    <dd class="eighthA">Oddly enough, Wrangell is the largest. Another park I had never heard of until I started this
-        class.
-    </dd>
-    <img class="image eighthA" src="images/wrangell.jpg"><br>
-    <dt class="ninth">Is Mayonnaise a National Park?</dt>
-    <br>
-    <dd class="ninthA">No, Patrick. Horeseradish is not a National Park either.</dd>
-    <img class="image ninthA" src="images/mayonnaise.jpg"><br>
-    <dt class="tenth">What is a surprising fact about National Parks?</dt>
-    <br>
-    <dd class="tenthA">Apparently they're all surprising, because I knew literally none of these answers before starting
-        the exercise.
-    </dd>
-    <img class="image tenthA" src="images/confused.jpg">
-</dl>
 
-<script src="js/jquery-2.2.4.js"></script>
-<script>
-    $("dd").addClass("invisible");
-    $(".image").addClass("invisible");
 
-    $(".first").click(function () {
-        $(".firstA").toggleClass("invisible")
-    });
-    $("dd").addClass("invisible");
-    $(".second").click(function () {
-        $(".secondA").toggleClass("invisible")
-    });
-    $("dd").addClass("invisible");
-    $(".third").click(function () {
-        $(".thirdA").toggleClass("invisible")
-    });
-    $("dd").addClass("invisible");
-    $(".fourth").click(function () {
-        $(".fourthA").toggleClass("invisible")
-    });
-    $("dd").addClass("invisible");
-    $(".fifth").click(function () {
-        $(".fifthA").toggleClass("invisible")
-    });
-    $("dd").addClass("invisible");
-    $(".sixth").click(function () {
-        $(".sixthA").toggleClass("invisible")
-    });
-    $("dd").addClass("invisible");
-    $(".seventh").click(function () {
-        $(".seventhA").toggleClass("invisible")
-    });
-    $("dd").addClass("invisible");
-    $(".eighth").click(function () {
-        $(".eighthA").toggleClass("invisible")
-    });
-    $("dd").addClass("invisible");
-    $(".ninth").click(function () {
-        $(".ninthA").toggleClass("invisible")
-    });
-    $("dd").addClass("invisible");
-    $(".tenth").click(function () {
-        $(".tenthA").toggleClass("invisible")
-    });
 
-</script>
+<div class="container-fluid">
+    <div class="list" id="firstList">
+        <h1>National Parks Frequently Asked Questions</h1>
+        <dl>
+            <dt>Are National Parks cool?</dt>
+            <dd>National Parks are REALLY cool.</dd>
+            <img class="image" src="images/coolTree.jpg"><br>
+            <dt>How Many National Parks are there?</dt>
+            <dd>There are 417 National Parks in the United States! That's more than 1 park for every million
+                people! Wow!
+            </dd>
+            <img class="image" src="images/manyParks.jpg"><br>
+            <dt>Are there any states without a National Park?</dt>
+            <dd>There are 23 states without a National Park. That means those other 27 states are basically just all
+                park.
+            </dd>
+            <img class="image" src="images/noParks.jpg"><br>
+            <dt>How much does it cost to go?</dt>
+            <dd>That varies from park to park. If you sneak in through the woods it's always free, though.
+            </dd>
+            <img class="image" src="images/dollars.jpg"><br>
+            <dt>Which was the first National Park?</dt>
+            <dd>Yellowstone National Park, which, I've been told, is nowhere near Oz, somehow.</dd>
+            <img class="image" src="images/yellowBrick.jpg"><br>
+            <dt>Which is the most popular National Park?</dt>
+            <dd>Great Smoky Mountains park routinely draws the most visitors. That's actually pretty impressive for a
+                park I've never heard of.
+            </dd>
+            <img class="image" src="images/gsmPark.jpg"><br>
+            <dt>Are there any National Parks in an ocean?</dt>
+            <dd>88 National Parks include coastal and oceanic regions in their protected domain.</dd>
+            <img class="image" src="images/oceanPark.jpg"><br>
+            <dt>Which National Park is the largest?</dt>
+            <dd>Oddly enough, Wrangell is the largest. Another park I had never heard of until I started this class.
+            </dd>
+            <img class="image" src="images/wrangell.jpg"><br>
+            <dt>Is Mayonnaise a National Park?</dt>
+            <dd>No, Patrick. Horeseradish is not a National Park either.</dd>
+            <img class="image" src="images/mayonnaise.jpg"><br>
+            <dt>What is a surprising fact about National Parks?</dt>
+            <dd>Apparently they're all surprising, because I knew literally none of these answers before starting the
+                exercise.
+            </dd>
+            <img class="image " src="images/confused.jpg">
+        </dl>
+    </div>
+
+    <button id="yellowButton">Click me!</button>
+    <div class="list" id="secondList">
+        <h3>Great Smoky Mountains National Park </h3>
+        <ul id="gsm">
+            <li>GSM Park is the most visited National Park in the United States</li>
+            <li>There are over 100 different species of tree in the park</li>
+            <li>GSM has never recorded a temperature above 80 degrees. Get ready for some nice hiking weather!</li>
+            <li>This National Park doesn't charge admission</li>
+
+        </ul>
+
+        <h3>Wrangell National Park</h3>
+        <ul id="wrangell">
+            <li>This is the largest National Park in the United States</li>
+            <li>Wrangell is so large you could fit 6 Yellowstone Parks inside of it!</li>
+            <li>Wrangell National Park contains one of the most profitable copper mines in the United States</li>
+            <li>This park contains 25% of all the glaciers in North America</li>
+
+        </ul>
+
+        <h3>Yellowstone National Park</h3>
+        <ul id="yellowstone">
+            <li>Yellowstone is the oldest National Park in the United States</li>
+            <li>This park actually expands into three States (Wyoming, Montana, Idaho)</li>
+            <li>There are over 300 geysers at Yellowstone</li>
+            <li>Old Faithful, the most famous geyser, erupts every 92 minutes</li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="col photo" id="leftImage"></div>
+        <div class="col photo" id="centerImage"></div>
+        <div class="col photo" id="rightImage"></div>
+    </div>
+    <div class="row">
+    <button class="col" id="leftButton">Swap!</button>
+    <button class="col" id="centerButton">Swap!</button>
+    <button class="col" id="rightButton">Swap!</button>
+    </div>
+
+    <script src="js/jquery-2.2.4.js"></script>
+    <script>
+
+        $("#yellowButton").click(function () {
+            $("ul").each(function () {
+                $(this).children().last().toggleClass("yellow")
+            });
+        });
+        $("h3").click(function () {
+            $(this).next().children().toggleClass("bold")
+        });
+        $("li").click(function () {
+            $(this).parent().children().first().toggleClass("blue")
+        });
+
+        $("dd").addClass("invisible");
+        $(".image").addClass("invisible");
+
+        $("dt").click(function () {
+            $(this).next().toggleClass("invisible");
+            $(this).next().next().toggleClass("invisible");
+        });
+
+
+        $("#leftButton").click(function(){
+            var left = $("#leftImage").css("background-image");
+            var center = $("#centerImage").css("background-image");
+            $("#leftImage").css("background-image", center);
+            $("#centerImage").css("background-image", left);
+        });
+        $("#rightButton").click(function(){
+            var center = $("#centerImage").css("background-image");
+            var right = $("#rightImage").css("background-image");
+            $("#rightImage").css("background-image", center);
+            $("#centerImage").css("background-image", right);
+        })
+        $("#centerButton").click(function(){
+            var left = $("#leftImage").css("background-image");
+            var center = $("#centerImage").css("background-image");
+            var right = $("#rightImage").css("background-image");
+            var number = Math.floor(Math.random()*2+1);
+            if(number===1) {
+                $("#leftImage").css("background-image", center);
+                $("#centerImage").css("background-image", left);
+            }else if(number===2){
+                $("#rightImage").css("background-image", center);
+                $("#centerImage").css("background-image", right);
+            }
+        });
+
+
+
+    </script>
+
 
 
 </body>
