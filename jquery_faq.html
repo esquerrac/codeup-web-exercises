@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>National Parks</title>
+
+    <style>
+        body {
+            background-color: lightblue;
+            text-align: center;
+        }
+
+        h1 {
+            color: darkgreen;
+        }
+
+        dl {
+            color: darkgreen;
+        }
+
+        .invisible {
+            display: none;
+        }
+
+        .image {
+            height: 400px;
+            width: 600px;
+        }
+
+    </style>
+</head>
+<body>
+<h1>National Parks Frequently Asked Questions</h1>
+<dl>
+    <dt class="first">Are National Parks cool?</dt>
+    <br>
+    <dd class="firstA">National Parks are REALLY cool.</dd>
+    <img class="image firstA" src="images/coolTree.jpg"><br>
+    <dt class="second">How Many National Parks are there?</dt>
+    <br>
+    <dd class="secondA">There are 417 National Parks in the United States! That's more than 1 park for every million
+        people! Wow!
+    </dd>
+    <img class="image secondA" src="images/manyParks.jpg"><br>
+    <dt class="third">Are there any states without a National Park?</dt>
+    <br>
+    <dd class="thirdA">There are 23 states without a National Park. That means those other 27 states are basically just
+        all park.
+    </dd>
+    <img class="image thirdA" src="images/noParks.jpg"><br>
+    <dt class="fourth">How much does it cost to go?</dt>
+    <br>
+    <dd class="fourthA">That varies from park to park. If you sneak in through the woods it's always free, though.</dd>
+    <img class="image fourthA" src="images/dollars.jpg"><br>
+    <dt class="fifth">Which was the first National Park?</dt>
+    <br>
+    <dd class="fifthA">Yellowstone National Park, which, I've been told, is nowhere near Oz, somehow.</dd>
+    <img class="image fifthA" src="images/yellowBrick.jpg"><br>
+    <dt class="sixth">Which is the most popular National Park?</dt>
+    <br>
+    <dd class="sixthA">Great Smoky Mountains park routinely draws the most visitors. That's actually pretty impressive
+        for a park I've never heard of.
+    </dd>
+    <img class="image sixthA" src="images/gsmPark.jpg"><br>
+    <dt class="seventh">Are there any National Parks in an ocean?</dt>
+    <br>
+    <dd class="seventhA">88 National Parks include coastal and oceanic regions in their protected domain.</dd>
+    <img class="image seventhA" src="images/oceanPark.jpg"><br>
+    <dt class="eighth">Which National Park is the largest?</dt>
+    <br>
+    <dd class="eighthA">Oddly enough, Wrangell is the largest. Another park I had never heard of until I started this
+        class.
+    </dd>
+    <img class="image eighthA" src="images/wrangell.jpg"><br>
+    <dt class="ninth">Is Mayonnaise a National Park?</dt>
+    <br>
+    <dd class="ninthA">No, Patrick. Horeseradish is not a National Park either.</dd>
+    <img class="image ninthA" src="images/mayonnaise.jpg"><br>
+    <dt class="tenth">What is a surprising fact about National Parks?</dt>
+    <br>
+    <dd class="tenthA">Apparently they're all surprising, because I knew literally none of these answers before starting
+        the exercise.
+    </dd>
+    <img class="image tenthA" src="images/confused.jpg">
+</dl>
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    $("dd").addClass("invisible");
+    $(".image").addClass("invisible");
+
+    $(".first").click(function () {
+        $(".firstA").toggleClass("invisible")
+    });
+    $("dd").addClass("invisible");
+    $(".second").click(function () {
+        $(".secondA").toggleClass("invisible")
+    });
+    $("dd").addClass("invisible");
+    $(".third").click(function () {
+        $(".thirdA").toggleClass("invisible")
+    });
+    $("dd").addClass("invisible");
+    $(".fourth").click(function () {
+        $(".fourthA").toggleClass("invisible")
+    });
+    $("dd").addClass("invisible");
+    $(".fifth").click(function () {
+        $(".fifthA").toggleClass("invisible")
+    });
+    $("dd").addClass("invisible");
+    $(".sixth").click(function () {
+        $(".sixthA").toggleClass("invisible")
+    });
+    $("dd").addClass("invisible");
+    $(".seventh").click(function () {
+        $(".seventhA").toggleClass("invisible")
+    });
+    $("dd").addClass("invisible");
+    $(".eighth").click(function () {
+        $(".eighthA").toggleClass("invisible")
+    });
+    $("dd").addClass("invisible");
+    $(".ninth").click(function () {
+        $(".ninthA").toggleClass("invisible")
+    });
+    $("dd").addClass("invisible");
+    $(".tenth").click(function () {
+        $(".tenthA").toggleClass("invisible")
+    });
+
+</script>
+
+
+</body>
+</html>
