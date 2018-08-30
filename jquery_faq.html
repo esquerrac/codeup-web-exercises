@@ -31,9 +31,9 @@
             list-style: none;
         }
 
-        /*.facts {*/
-            /*display: none;*/
-        /*}*/
+        .facts {
+        display: none;
+        }
 
         .yellow {
             background-color: yellow;
@@ -74,20 +74,22 @@
     </style>
 </head>
 <body>
-<div class="modal fade-bd-signUp-sm" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel"
-     aria-hidden="true">
-    <div class="modal=dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <h5 class="modal-title" id="signUpModalLabel"><span>Would you like to sign up for our Newsletter?</span>
-                </h5>
+
+<div class="container-fluid">
+    <div class="modal fade-bd-signUp-sm" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel"
+         aria-hidden="true">
+        <div class="modal=dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h5 class="modal-title" id="signUpModalLabel">
+                        <span>Would you like to sign up for our Newsletter?</span>
+                    </h5>
+                </div>
+                <a href="#" class="btn btn-outline-secondary" data-dismiss="modal">No thanks</a>
+                <a href="#" class="btn btn-outline-primary">Sign me up!</a>
             </div>
-            <a href="#" class="btn btn-outline-secondary" data-dismiss="modal">No thanks</a>
-            <a href="#" class="btn btn-outline-primary">Sign me up!</a>
         </div>
     </div>
-</div>
-<div class="container-fluid">
     <div class="list" id="firstList">
         <h1>National Parks Frequently Asked Questions</h1>
         <dl>
@@ -134,9 +136,9 @@
         </dl>
     </div>
 
-    <button id="yellowButton">Like yellow?</button>
     <div class="list" id="secondList">
-        <h3>Great Smoky Mountains National Park</h3>
+    <button id="yellowButton">Like yellow?</button>
+        <h3 id="gsmToggle">Great Smoky Mountains National Park</h3>
         <ul class="facts" id="gsm">
             <li>GSM Park is the most visited National Park in the United States</li>
             <li>There are over 100 different species of tree in the park</li>
@@ -145,7 +147,7 @@
 
         </ul>
 
-        <h3>Wrangell National Park</h3>
+        <h3 id="wrangellToggle">Wrangell National Park</h3>
         <ul class="facts" id="wrangell">
             <li>This is the largest National Park in the United States</li>
             <li>Wrangell is so large you could fit 6 Yellowstone Parks inside of it!</li>
@@ -154,7 +156,7 @@
 
         </ul>
 
-        <h3>Yellowstone National Park</h3>
+        <h3 id="yellowstoneToggle">Yellowstone National Park</h3>
         <ul class="facts" id="yellowstone">
             <li>Yellowstone is the oldest National Park in the United States</li>
             <li>This park actually expands into three States (Wyoming, Montana, Idaho)</li>
@@ -175,9 +177,9 @@
 </div>
 
 <script src="js/jquery-2.2.4.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+<!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"-->
+        <!--integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"-->
+        <!--crossorigin="anonymous"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
@@ -188,13 +190,24 @@
 
     $(document).ready(setTimeout(function () {
         $("#signUpModal").modal("show")
-    }, 2000));
+    }, 8000));
 
     $("#yellowButton").click(function () {
         $("ul").each(function () {
             $(this).children().last().toggleClass("yellow")
         });
     });
+
+    // $("#gsmToggle").click(function () {
+    //     $("#gsm").slideToggle(1500);
+    // });
+    // $("#wrangellToggle").click(function () {
+    //     $("#wrangell").slideToggle(1500);
+    // });
+    // $("#yellowstoneToggle").click(function () {
+    //     $("#yellowstone").slideToggle(1500);
+    // });
+
     $("h3").click(function () {
         $(this).next().children().toggleClass("bold");
         $(this).next().slideToggle(2000);
