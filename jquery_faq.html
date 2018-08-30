@@ -9,12 +9,13 @@
             background-color: lightblue;
         }
 
-        #firstList {
-            text-align: center;
+        .container-fluid {
+            color: darkgreen;
         }
 
-        .list {
-            color: darkgreen;
+        #firstList {
+            text-align: center;
+            clear: left;
         }
 
         .invisible {
@@ -29,6 +30,10 @@
         ul {
             list-style: none;
         }
+
+        /*.facts {*/
+            /*display: none;*/
+        /*}*/
 
         .yellow {
             background-color: yellow;
@@ -62,12 +67,26 @@
             background-image: url("images/cheezits.jpg");
             display: inline-block;
         }
+
+        #signUpModal {
+            max-width: 25%;
+        }
     </style>
 </head>
 <body>
-
-
-
+<div class="modal fade-bd-signUp-sm" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel"
+     aria-hidden="true">
+    <div class="modal=dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h5 class="modal-title" id="signUpModalLabel"><span>Would you like to sign up for our Newsletter?</span>
+                </h5>
+            </div>
+            <a href="#" class="btn btn-outline-secondary" data-dismiss="modal">No thanks</a>
+            <a href="#" class="btn btn-outline-primary">Sign me up!</a>
+        </div>
+    </div>
+</div>
 <div class="container-fluid">
     <div class="list" id="firstList">
         <h1>National Parks Frequently Asked Questions</h1>
@@ -115,10 +134,10 @@
         </dl>
     </div>
 
-    <button id="yellowButton">Click me!</button>
+    <button id="yellowButton">Like yellow?</button>
     <div class="list" id="secondList">
-        <h3>Great Smoky Mountains National Park </h3>
-        <ul id="gsm">
+        <h3>Great Smoky Mountains National Park</h3>
+        <ul class="facts" id="gsm">
             <li>GSM Park is the most visited National Park in the United States</li>
             <li>There are over 100 different species of tree in the park</li>
             <li>GSM has never recorded a temperature above 80 degrees. Get ready for some nice hiking weather!</li>
@@ -127,7 +146,7 @@
         </ul>
 
         <h3>Wrangell National Park</h3>
-        <ul id="wrangell">
+        <ul class="facts" id="wrangell">
             <li>This is the largest National Park in the United States</li>
             <li>Wrangell is so large you could fit 6 Yellowstone Parks inside of it!</li>
             <li>Wrangell National Park contains one of the most profitable copper mines in the United States</li>
@@ -136,7 +155,7 @@
         </ul>
 
         <h3>Yellowstone National Park</h3>
-        <ul id="yellowstone">
+        <ul class="facts" id="yellowstone">
             <li>Yellowstone is the oldest National Park in the United States</li>
             <li>This park actually expands into three States (Wyoming, Montana, Idaho)</li>
             <li>There are over 300 geysers at Yellowstone</li>
@@ -149,65 +168,79 @@
         <div class="col photo" id="rightImage"></div>
     </div>
     <div class="row">
-    <button class="col" id="leftButton">Swap!</button>
-    <button class="col" id="centerButton">Swap!</button>
-    <button class="col" id="rightButton">Swap!</button>
+        <button class="col" id="leftButton">Swap!</button>
+        <button class="col" id="centerButton">Swap!</button>
+        <button class="col" id="rightButton">Swap!</button>
     </div>
+</div>
 
-    <script src="js/jquery-2.2.4.js"></script>
-    <script>
+<script src="js/jquery-2.2.4.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script>
 
-        $("#yellowButton").click(function () {
-            $("ul").each(function () {
-                $(this).children().last().toggleClass("yellow")
-            });
+    $(document).ready(setTimeout(function () {
+        $("#signUpModal").modal("show")
+    }, 2000));
+
+    $("#yellowButton").click(function () {
+        $("ul").each(function () {
+            $(this).children().last().toggleClass("yellow")
         });
-        $("h3").click(function () {
-            $(this).next().children().toggleClass("bold")
-        });
-        $("li").click(function () {
-            $(this).parent().children().first().toggleClass("blue")
-        });
-
-        $("dd").addClass("invisible");
-        $(".image").addClass("invisible");
-
-        $("dt").click(function () {
-            $(this).next().toggleClass("invisible");
-            $(this).next().next().toggleClass("invisible");
-        });
+    });
+    $("h3").click(function () {
+        $(this).next().children().toggleClass("bold");
+        $(this).next().slideToggle(2000);
+    });
 
 
-        $("#leftButton").click(function(){
-            var left = $("#leftImage").css("background-image");
-            var center = $("#centerImage").css("background-image");
+    $("li").click(function () {
+        $(this).parent().children().first().toggleClass("blue")
+    });
+
+    $("dd").addClass("invisible");
+    $(".image").addClass("invisible");
+
+    $("dt").click(function () {
+        $(this).next().toggleClass("invisible");
+        $(this).next().next().toggleClass("invisible");
+    });
+
+    $("#leftButton").click(function () {
+        var left = $("#leftImage").css("background-image");
+        var center = $("#centerImage").css("background-image");
+        $("#leftImage").css("background-image", center);
+        $("#centerImage").css("background-image", left);
+    });
+    $("#rightButton").click(function () {
+        var center = $("#centerImage").css("background-image");
+        var right = $("#rightImage").css("background-image");
+        $("#rightImage").css("background-image", center);
+        $("#centerImage").css("background-image", right);
+    });
+    $("#centerButton").click(function () {
+        var left = $("#leftImage").css("background-image");
+        var center = $("#centerImage").css("background-image");
+        var right = $("#rightImage").css("background-image");
+        var number = Math.floor(Math.random() * 2 + 1);
+        if (number === 1) {
             $("#leftImage").css("background-image", center);
             $("#centerImage").css("background-image", left);
-        });
-        $("#rightButton").click(function(){
-            var center = $("#centerImage").css("background-image");
-            var right = $("#rightImage").css("background-image");
+        } else if (number === 2) {
             $("#rightImage").css("background-image", center);
             $("#centerImage").css("background-image", right);
-        })
-        $("#centerButton").click(function(){
-            var left = $("#leftImage").css("background-image");
-            var center = $("#centerImage").css("background-image");
-            var right = $("#rightImage").css("background-image");
-            var number = Math.floor(Math.random()*2+1);
-            if(number===1) {
-                $("#leftImage").css("background-image", center);
-                $("#centerImage").css("background-image", left);
-            }else if(number===2){
-                $("#rightImage").css("background-image", center);
-                $("#centerImage").css("background-image", right);
-            }
-        });
+        }
+    });
 
 
-
-    </script>
-
+</script>
 
 
 </body>
