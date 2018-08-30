@@ -32,7 +32,7 @@
         }
 
         .facts {
-        display: none;
+            display: none;
         }
 
         .yellow {
@@ -137,7 +137,7 @@
     </div>
 
     <div class="list" id="secondList">
-    <button id="yellowButton">Like yellow?</button>
+        <button id="yellowButton">Like yellow?</button>
         <h3 id="gsmToggle">Great Smoky Mountains National Park</h3>
         <ul class="facts" id="gsm">
             <li>GSM Park is the most visited National Park in the United States</li>
@@ -177,9 +177,6 @@
 </div>
 
 <script src="js/jquery-2.2.4.js"></script>
-<!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"-->
-        <!--integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"-->
-        <!--crossorigin="anonymous"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
@@ -197,16 +194,6 @@
             $(this).children().last().toggleClass("yellow")
         });
     });
-
-    // $("#gsmToggle").click(function () {
-    //     $("#gsm").slideToggle(1500);
-    // });
-    // $("#wrangellToggle").click(function () {
-    //     $("#wrangell").slideToggle(1500);
-    // });
-    // $("#yellowstoneToggle").click(function () {
-    //     $("#yellowstone").slideToggle(1500);
-    // });
 
     $("h3").click(function () {
         $(this).next().children().toggleClass("bold");
