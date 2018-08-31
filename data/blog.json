@@ -1,0 +1,90 @@
+[
+  {
+    "title": "My First Blog Post",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "categories": [
+      "greek"
+    ],
+    "date": "January 25, 2015"
+  },
+  {
+    "title": "The Second Post",
+    "content": "Cupcake ipsum dolor sit amet gummies. Cake chocolate sweet ice cream oat cake biscuit bear claw dessert. Jujubes marzipan toffee apple pie pastry dragée jujubes marshmallow. Dragée chocolate gingerbread liquorice chocolate bar jujubes. Sweet chocolate bar jelly-o chocolate cake candy carrot cake cotton candy macaroon marzipan. Sweet roll biscuit sweet gummies topping sesame snaps tootsie roll sugar plum pie. Sweet muffin croissant chocolate cake chupa chups. Donut croissant gummies donut powder ice cream. Chupa chups halvah apple pie topping jelly beans donut candy canes donut. Bonbon cake gummi bears cheesecake tart topping powder liquorice gummi bears.",
+    "categories": [
+      "family",
+      "candy",
+      "sweets",
+      "sugar"
+    ],
+    "date": "February 14, 2015"
+  },
+  {
+    "title": "Third blog post",
+    "content": "This entry should be much closer to the top of the page, but for some reason I updated my blog twice the first time.",
+    "categories": [
+      "weird",
+      "code",
+      "repairs"
+    ],
+    "date": "March 2, 2015"
+  },
+  {
+    "title": "Really cool blog post",
+    "content": "This is a bunch of text to fill out the space so I can show you this really cool event listener I put in.  Like, seriously guys, I'm super excited about it.  Unless it doesn't work, in which case I'm going to try to finish this part of the presentation so quicky that you never get a chance to see my shame.  After typing, however, I found out that this is not nearly enough text to properly push the page down at all so you'll have to get through some more lorem after this one.  Cool?  Cool.",
+    "categories": [
+      "hopes",
+      "dreams"
+    ],
+    "date": "April 12, 2015"
+  },
+  {
+    "title": "My fifth Blog Post",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "categories": [
+      "Morem Ipsum"
+    ],
+    "date": "April 17, 2015"
+  },
+  {
+    "title": "My sixth Blog Post",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "categories": [
+      "#ForCayde"
+    ],
+    "date": "April 17, 2015"
+  },
+  {
+    "title": "My seventh blog post!",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "categories": [
+      "Getting there!"
+    ],
+    "date": "April 22, 2015"
+  },
+  {
+    "title": "My eighth blog post!",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "categories": [
+      "Just keep swimming!"
+    ],
+    "date": "April 22, 2015"
+  },
+  {
+    "title": "yet another blog post",
+    "content": "This should show up as an example on reFRESH",
+    "categories": [
+      "aint",
+      "nobody",
+      "dope",
+      "as",
+      "me",
+      "I'm",
+      "just",
+      "so",
+      "fresh",
+      "and",
+      "clean"
+    ],
+    "date": "June 1, 2015"
+  }
+]

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Blog</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #cbffcd;
+        }
+
+        .card {
+            margin: 1em;
+            max-width: 50%;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div id="posts" class="container-fluid">
+
+
+</div>
+
+<script src="js/jquery-2.2.4.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script>
+
+
+    function getPosts(posts) {
+
+        for (var i = 0; i < posts.length; i++) {
+            var card = "<div class='card'>";
+            card += "<div class='card-header'>" + posts[i].date + "</div>";
+            card += "<div class='card-body'>";
+            card += "<h5>" + posts[i].title + "</h5>";
+            card += "<p class='card-text'>" + posts[i].content + "</p>";
+            card += "<p class='card-footer'>";
+            for (var j = 0; j < posts[i].categories.length; j++) {
+                var cats = "";
+                cats = "<button type='button' class='btn btn-info'>" + posts[i].categories[j] + "</button>";
+                card += cats;
+            }
+            card += "</div>";
+            $("#posts").append(card);
+        }
+
+    }
+
+    var blogPosts = $.ajax("data/blog.json");
+    blogPosts.done(getPosts);
+
+    $(document).scroll(function () {
+        if ($(window).scrollTop() == ($(document).height() - window.innerHeight)) {
+            $.get("data/blog.json").done(getPosts);
+        }
+    });
+
+
+</script>
+</body>
+</html>
