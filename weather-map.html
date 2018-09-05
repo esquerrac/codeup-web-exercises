@@ -22,6 +22,11 @@
             alignment: center;
 
         }
+        #map-canvas{
+            max-width: auto;
+            height: 30em;
+            overflow: visible;
+        }
 
     </style>
 </head>
@@ -30,8 +35,8 @@
     <nav class="navbar navbar-secondary bg-secondary">
         <p id="navText">My Local Weather</p>
         <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+            <input id="weatherSearch" class="form-control mr-sm-2" type="search" placeholder="Enter Zip Code" aria-label="Search">
+            <button id="weatherButton" class="btn btn-outline-dark my-2 my-sm-0">Get Weather Info</button>
         </form>
     </nav>
     <div class="card">
@@ -62,6 +67,8 @@
             </div>
         </div>
     </div>
+    <div id="map-canvas"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnWTFSDOmOv4Je_Z4nRf1lQXw5uWcup0I"></script>
 
 
 
@@ -75,8 +82,9 @@
     var weatherData = $.get("http://api.openweathermap.org/data/2.5/forecast?units=imperial", {
         APPID: "bf40db3c8579712103dfeed38c4be3be",
         id: "4726206"
-    }).done(function(data){
-        console.log(data);
+    }).done(function getWeather(data){;
+
+
         $("#locationName").text(data.city.name);
         var day1Temp = 0;
         var day1Humid = 0;
@@ -117,6 +125,138 @@
 
     });
 
+    var address = "Codeup, 600 Navarro St #350, San Antonio, TX 78205, USA";
+    var defaultLatLng ={lat:  29.4267857, lng: -98.48957639999998};
+    var mapOptions = {
+        // Set the zoom level
+        zoom: 10,
+
+
+        center: {
+        defaultLatLng
+        }
+    };
+
+
+
+    // Render the map
+    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+
+
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode ({"address" : address}, function(results, status){
+        if (status==google.maps.GeocoderStatus.OK){
+            map.setCenter(results[0].geometry.location);
+        }else {
+            alert("Geocoding was not successful. Status: " + status);
+        }
+    });
+    var marker = new google.maps.Marker({
+        position: defaultLatLng,
+        map: map,
+        draggable: true
+    });
+
+    $("#map-canvas").click(function () {
+        var lat = parseInt(marker.getPosition().lat());
+        var lng = (parseInt(marker.getPosition().lng()));
+        $.get("http://api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+lng+"&type=like&&units=imperial", {
+            APPID: "bf40db3c8579712103dfeed38c4be3be",
+        }).done(function getWeather(data){;
+        console.log(data);
+
+
+            $("#locationName").text(data.city.name);
+            var day1Temp = 0;
+            var day1Humid = 0;
+            for (var i=0; i<8; i++){
+                day1Temp += data.list[i].main.temp;
+                day1Humid += data.list[i].main.humidity;
+            }
+            day1Temp /=8;
+            day1Humid/=8;
+            $("#day1Temp").text("Average Temperature: "+ parseInt(day1Temp) + "°F");
+            $("#day1Weather").html("<img src='http://openweathermap.org/img/w/"+data.list[0].weather[0].icon+".png'>");
+            $("#day1Describe").text(data.list[0].weather[0].description);
+            $("#day1Humid").text("Average Humidity: " + parseInt(day1Humid) + "%");
+            var day2Temp = 0;
+            var day2Humid = 0;
+            for (var i=8; i<16; i++){
+                day2Temp += data.list[i].main.temp;
+                day2Humid += data.list[i].main.humidity;
+            }
+            day2Temp/=8;
+            day2Humid/=8;
+            $("#day2Temp").text("Average Temperature: "+ parseInt(day2Temp) +"°F");
+            $("#day2Weather").html("<img src='http://openweathermap.org/img/w/"+data.list[8].weather[0].icon+".png'>");
+            $("#day2Describe").text(data.list[8].weather[0].description);
+            $("#day2Humid").text("Average Humidity: " + parseInt(day2Humid)+ "%");
+            var day3Temp = 0;
+            var day3Humid = 0;
+            for (var i=17; i<24; i++){
+                day3Temp += data.list[i].main.temp;
+                day3Humid += data.list[i].main.humidity;
+            }
+            day3Temp/=8;
+            day3Humid/=8;
+            $("#day3Temp").text("Average Temperature: "+ parseInt(day3Temp) + "°F");
+            $("#day3Weather").html("<img src='http://openweathermap.org/img/w/"+data.list[16].weather[0].icon+".png'>");
+            $("#day3Describe").text(data.list[16].weather[0].description);
+            $("#day3Humid").text("Average Humidity: " + parseInt(day3Humid)+ "%");
+
+        })});
+
+    $("#weatherButton").click(function (event) {
+        event.preventDefault();
+        $.get("http://api.openweathermap.org/data/2.5/forecast?zip="+$("#weatherSearch").value+",us", {
+            APPID: "bf40db3c8579712103dfeed38c4be3be",
+        }).done(function getWeather(data){;
+            $("#locationName").text(data.city.name);
+            var day1Temp = 0;
+            var day1Humid = 0;
+            for (var i=0; i<8; i++){
+                day1Temp += data.list[i].main.temp;
+                day1Humid += data.list[i].main.humidity;
+            }
+            day1Temp /=8;
+            day1Humid/=8;
+            $("#day1Temp").text("Average Temperature: "+ parseInt(day1Temp) + "°F");
+            $("#day1Weather").html("<img src='http://openweathermap.org/img/w/"+data.list[0].weather[0].icon+".png'>");
+            $("#day1Describe").text(data.list[0].weather[0].description);
+            $("#day1Humid").text("Average Humidity: " + parseInt(day1Humid) + "%");
+            var day2Temp = 0;
+            var day2Humid = 0;
+            for (var i=8; i<16; i++){
+                day2Temp += data.list[i].main.temp;
+                day2Humid += data.list[i].main.humidity;
+            }
+            day2Temp/=8;
+            day2Humid/=8;
+            $("#day2Temp").text("Average Temperature: "+ parseInt(day2Temp) +"°F");
+            $("#day2Weather").html("<img src='http://openweathermap.org/img/w/"+data.list[8].weather[0].icon+".png'>");
+            $("#day2Describe").text(data.list[8].weather[0].description);
+            $("#day2Humid").text("Average Humidity: " + parseInt(day2Humid)+ "%");
+            var day3Temp = 0;
+            var day3Humid = 0;
+            for (var i=17; i<24; i++){
+                day3Temp += data.list[i].main.temp;
+                day3Humid += data.list[i].main.humidity;
+            }
+            day3Temp/=8;
+            day3Humid/=8;
+            $("#day3Temp").text("Average Temperature: "+ parseInt(day3Temp) + "°F");
+            $("#day3Weather").html("<img src='http://openweathermap.org/img/w/"+data.list[16].weather[0].icon+".png'>");
+            $("#day3Describe").text(data.list[16].weather[0].description);
+            $("#day3Humid").text("Average Humidity: " + parseInt(day3Humid)+ "%");
+
+            var marker = new google.maps.Marker({
+                position: $("#weatherSearch").value,
+                map: map,
+                draggable: true
+            });
+
+        })});
 
 
 
